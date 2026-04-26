@@ -5,6 +5,7 @@ from random import shuffle
 from src.Tile import Tile
 from settings import TILES_PATH
 
+
 class TileManager:
     def __init__(self):
         self._tiles_image = pg.image.load(TILES_PATH)
@@ -24,7 +25,8 @@ class TileManager:
                 self._tiles.append(Tile(data, self._tiles_image))
 
         shuffle(self._tiles)
-        initial_one = Tile({'asset_x': 3, 'asset_y': 2, 'sides': ['city', 'road', 'field', 'road']},
+        initial_one = Tile({'asset_x': 3, 'asset_y': 2,
+                            'sides': ['city', 'road', 'field', 'road']},
                            self._tiles_image)
         initial_one.set_pos((0, 0))
         self._grid[(0, 0)] = initial_one

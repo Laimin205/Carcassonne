@@ -1,7 +1,9 @@
 import sys
 import pygame as pg
 
-from settings import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_FLAGS, SCALE_DIFF, INIT_GLOB_X, INIT_GLOB_Y, TILE_SIZE
+from settings import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_FLAGS, SCALE_DIFF, \
+    INIT_GLOB_X, INIT_GLOB_Y, TILE_SIZE
+
 
 class Graphics:
     def __init__(self):
@@ -11,7 +13,8 @@ class Graphics:
         self._prev_mouse_pos = (0, 0)
         self._cur_shift = (0, 0)
         self._is_shifting = False
-        self._screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), SCREEN_FLAGS)
+        self._screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT),
+                                           SCREEN_FLAGS)
         self._color = pg.Color(80, 50, 20)
 
     def get_for_draw(self):
@@ -40,7 +43,8 @@ class Graphics:
         self._cur_shift = (0, 0)
 
     def handle_event(self, event):
-        if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
+        if event.type == pg.QUIT or (
+                event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
             pg.quit()
             sys.exit()
 
