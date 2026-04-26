@@ -36,19 +36,19 @@
     "count": 3
   },
   {
-    "asset_x": 5,
+    "asset_x": 6,
     "asset_y": 1,
     "sides": ["city", "filed", "filed", "field"],
     "count": 5
   },
   {
-    "asset_x": 10,
+    "asset_x": 11,
     "asset_y": 1,
     "sides": ["city", "filed", "road", "road"],
     "count": 3
   },
   {
-    "asset_x": 13,
+    "asset_x": 14,
     "asset_y": 1,
     "sides": ["city", "road", "road", "field"],
     "count": 3
@@ -66,14 +66,14 @@
     "count": 3
   },
   {
-    "asset_x": 7,
+    "asset_x": 13,
     "asset_y": 2,
     "sides": ["road", "field", "road", "field"],
     "count": 8
   },
   {
-    "asset_x": 15,
-    "asset_y": 2,
+    "asset_x": 1,
+    "asset_y": 3,
     "sides": ["field", "field", "road", "road"],
     "count": 9
   },
@@ -91,25 +91,25 @@
   },
   {
     "asset_x": 13,
-    "asset_y": 2,
+    "asset_y": 3,
     "sides": ["field", "field", "field", "field"],
     "count": 4
   },
   {
     "asset_x": 1,
-    "asset_y": 3,
+    "asset_y": 4,
     "sides": ["field", "field", "road", "field"],
     "count": 2
   },
   {
     "asset_x": 3,
-    "asset_y": 3,
+    "asset_y": 4,
     "sides": ["city", "city", "city", "city"],
     "count": 1
   },
   {
     "asset_x": 4,
-    "asset_y": 3,
+    "asset_y": 4,
     "sides": ["city", "city", "field", "city"],
     "count": 4
   }
