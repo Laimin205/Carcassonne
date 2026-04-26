@@ -32,7 +32,7 @@
   {
     "asset_x": 2,
     "asset_y": 1,
-    "sides": ["city", "field", "field", "city"],
+    "sides": ["city", "field", "city", "field"],
     "count": 3
   },
   {

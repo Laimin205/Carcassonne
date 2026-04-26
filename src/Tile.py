@@ -23,19 +23,28 @@ class Tile:
                                     self._y_pos * scaled_size + y))
 
     def draw_pos(self, window, x = 0, y = 0, scale = 1):
-        screen, sc, _x, _y = window.get_for_draw()
+        screen = window.get_screen()
         scaled_sprite = pg.transform.rotozoom(self._sprite, self._rotation, scale)
         screen.blit(scaled_sprite, (x, y))
 
-    def set_pos(self, x, y):
+    def set_pos(self, pos):
+        x, y = pos
         self._x_pos = x
         self._y_pos = y
         self._status = "placed"
 
-    def rotate(self, angle = -90):
-        self._rotation = (self._rotation + angle + 360) % 360
+    def rotate(self):
+        self._rotation = (self._rotation + 270) % 360
+        self._sides = self._sides[-1:] + self._sides[:-1]
 
-    def place(self, window, rel_x, rel_y):
-        screen, scale, gl_x, gl_y = window.get_for_draw()
-        scaled_size = int(TILE_SIZE * scale)
-        self.set_pos((rel_x - gl_x) // scaled_size, (rel_y - gl_y) // scaled_size)
+    def up(self):
+        return self._sides[0]
+
+    def right(self):
+        return self._sides[1]
+
+    def down(self):
+        return self._sides[2]
+
+    def left(self):
+        return self._sides[3]

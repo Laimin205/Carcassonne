@@ -1,7 +1,7 @@
 import sys
 import pygame as pg
 
-from settings import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_FLAGS, SCALE_DIFF, INIT_GLOB_X, INIT_GLOB_Y
+from settings import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_FLAGS, SCALE_DIFF, INIT_GLOB_X, INIT_GLOB_Y, TILE_SIZE
 
 class Graphics:
     def __init__(self):
@@ -17,6 +17,16 @@ class Graphics:
     def get_for_draw(self):
         dx, dy = self._cur_shift
         return self._screen, self._scale, self._center_x + dx, self._center_y + dy
+
+    def get_screen(self):
+        return self._screen
+
+    def get_grid_pos(self, rel_pos):
+        rel_x, rel_y = rel_pos
+        dx, dy = self._cur_shift
+        scaled_size = int(TILE_SIZE * self._scale)
+        return ((rel_x - self._center_x - dx) // scaled_size,
+                (rel_y - self._center_y - dy) // scaled_size)
 
     def change_scale(self, idx):
         self._scale += idx * SCALE_DIFF
