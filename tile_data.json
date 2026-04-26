@@ -38,13 +38,13 @@
   {
     "asset_x": 6,
     "asset_y": 1,
-    "sides": ["city", "filed", "filed", "field"],
+    "sides": ["city", "field", "field", "field"],
     "count": 5
   },
   {
     "asset_x": 11,
     "asset_y": 1,
-    "sides": ["city", "filed", "road", "road"],
+    "sides": ["city", "field", "road", "road"],
     "count": 3
   },
   {
