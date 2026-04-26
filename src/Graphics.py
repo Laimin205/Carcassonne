@@ -52,4 +52,4 @@ class Graphics:
             self._is_shifting=False
 
     def draw(self):
-        self._screen.fill(pg.Color(80, 50, 20))
+        self._screen.fill(self._color)
