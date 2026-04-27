@@ -1,24 +1,22 @@
 import pygame as pg
 
 from src.Graphics import Graphics
-from src.Tile import Tile
+from src.TileManager import TileManager
 
-
-tile1 = Tile(5, 2, 0, 0)
-tile2 = Tile(2, 1, 0, -1)
-tile3 = Tile(10, 1, 1, 0)
+pg.init()
+TM = TileManager()
 window = Graphics()
 
 while True:
     # 1 - обработка событий
     for event in pg.event.get():
         window.handle_event(event)
+        TM.handle_event(event, window)
 
     # 2 - обновление логики и параметров
 
     # 3 - Отрисовка экрана и объектов
     window.draw()
-    tile1.draw(window)
-    tile2.draw(window)
-    tile3.draw(window)
+    TM.draw(window)
+    TM.draw_current_tile(window)
     pg.display.update()
