@@ -13,7 +13,7 @@ import pygame as pg
 from random import shuffle
 
 from src.Tile import Tile
-from settings import TILES_PATH
+from settings import TILES_PATH, TILES_NUMBER
 
 
 class TileManager:
@@ -77,6 +77,8 @@ class TileManager:
         Args:
             window (Graphics): объект окна (интерфейс, предоставляющий глобальные данные)
         """
+        if self._idx == TILES_NUMBER:
+            return
         screen, sc, x, y = window.get_for_draw()
         pg.draw.rect(screen, (255, 0, 0), (0, 0, 140, 140))
         self._tiles[self._idx].draw_pos(window, 5, 5, 0.5)
@@ -93,6 +95,9 @@ class TileManager:
             event (pg.event): событие
             window (Graphics): объект окна (интерфейс, предоставляющий глобальные данные)
         """
+        if self._idx == TILES_NUMBER:
+            return
+
         if event.type == pg.MOUSEBUTTONDOWN:
             if event.button == 1:
                 self._prev_mouse_pos = event.pos
