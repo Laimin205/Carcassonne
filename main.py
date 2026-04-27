@@ -3,6 +3,7 @@ import pygame as pg
 from src.Graphics import Graphics
 from src.TileManager import TileManager
 
+pg.init()
 TM = TileManager()
 window = Graphics()
 

@@ -72,16 +72,21 @@ class TileManager:
 
     def draw_current_tile(self, window):
         """
-        Отрисовывает текущий активный тайл в левом верхнем углу экрана
+        Отрисовывает текущий активный тайл в левом верхнем углу экрана и число оставшихся тайлов
 
         Args:
             window (Graphics): объект окна (интерфейс, предоставляющий глобальные данные)
         """
         if self._idx == TILES_NUMBER:
             return
-        screen, sc, x, y = window.get_for_draw()
+        screen = window.get_screen()
         pg.draw.rect(screen, (255, 0, 0), (0, 0, 140, 140))
         self._tiles[self._idx].draw_pos(window, 5, 5, 0.5)
+
+        pg.draw.rect(screen, (255, 0, 0), (0, 140, 50, 40))
+        myfont = pg.font.Font(None, 40)
+        text = myfont.render(str(TILES_NUMBER - self._idx), True, (255, 255, 122))
+        screen.blit(text, (10, 145))
 
     def handle_event(self, event, window):
         """
